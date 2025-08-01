@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mi Primer Negocio</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <h1>Simulador de Rentabilidad</h1>
+  <div class="formulario">
+    <div class="form-group">
+      <label for="departamento">Departamento</label>
+      <select id="departamento"></select>
+    </div>
+
+    <div class="form-group">
+      <label for="sector">Sector del negocio</label>
+      <select id="sector"></select>
+    </div>
+
+    <div class="form-group">
+      <label for="tipo">Tipo de negocio</label>
+      <input type="text" id="tipo" placeholder="Ej: Tienda de ropa" />
+    </div>
+
+    <div class="form-group">
+      <label for="ingresos">Ingresos mensuales estimados (COP)</label>
+      <input type="number" id="ingresos" />
+    </div>
+
+    <div class="form-group">
+      <label for="gastos">Gastos mensuales estimados (COP)</label>
+      <input type="number" id="gastos" />
+    </div>
+
+    <button onclick="evaluar()">Evaluar Negocio</button>
+  </div>
+
+  <div class="resultado" id="resultado"></div>
+  <script src="js/script.js"></script>
+</body>
+</html>

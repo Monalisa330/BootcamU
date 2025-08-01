@@ -1,0 +1,39 @@
+{
+  "departamentos": [
+    { "nombre": "Antioquia", "porcentaje": 12.1 },
+    { "nombre": "Bogotá D.C.", "porcentaje": 11.2 },
+    { "nombre": "Valle del Cauca", "porcentaje": 8.5 },
+    { "nombre": "Nariño", "porcentaje": 7.7 },
+    { "nombre": "Atlántico", "porcentaje": 6.3 },
+    { "nombre": "Bolívar", "porcentaje": 6.1 },
+    { "nombre": "Córdoba", "porcentaje": 5.8 },
+    { "nombre": "Santander", "porcentaje": 5.5 },
+    { "nombre": "Cauca", "porcentaje": 4.7 },
+    { "nombre": "Cundinamarca", "porcentaje": 4.4 },
+    { "nombre": "Magdalena", "porcentaje": 4.0 },
+    { "nombre": "Sucre", "porcentaje": 3.1 },
+    { "nombre": "Cesar", "porcentaje": 3.0 },
+    { "nombre": "La Guajira", "porcentaje": 2.3 },
+    { "nombre": "Tolima", "porcentaje": 2.3 },
+    { "nombre": "Norte de Santander", "porcentaje": 2.2 },
+    { "nombre": "Meta", "porcentaje": 1.9 },
+    { "nombre": "Boyacá", "porcentaje": 1.9 },
+    { "nombre": "Caldas", "porcentaje": 1.6 },
+    { "nombre": "Huila", "porcentaje": 1.6 },
+    { "nombre": "Risaralda", "porcentaje": 1.4 },
+    { "nombre": "Caquetá", "porcentaje": 0.9 },
+    { "nombre": "Quindío", "porcentaje": 0.7 },
+    { "nombre": "Chocó", "porcentaje": 0.6 },
+    { "nombre": "San Andrés", "porcentaje": 0.1 }
+  ],
+  "sectores": [
+    { "nombre": "Comercio y reparación de vehículos", "porcentaje": 41.5 },
+    { "nombre": "Alojamiento y servicios de comida", "porcentaje": 16.6 },
+    { "nombre": "Industrias manufactureras", "porcentaje": 12.3 },
+    { "nombre": "Agricultura, ganadería, caza, silvicultura y pesca", "porcentaje": 11.5 },
+    { "nombre": "Transporte y almacenamiento", "porcentaje": 7.9 },
+    { "nombre": "Otras actividades de servicios", "porcentaje": 6.5 },
+    { "nombre": "Construcción", "porcentaje": 3.3 },
+    { "nombre": "Actividades profesionales, científicas, técnicas e inmobiliarias", "porcentaje": 0.4 }
+  ]
+}
