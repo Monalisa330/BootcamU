@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: cadetblue;
+    background-color: rgb(15, 133, 50);
     color: white;
     padding: 20px;
     text-align: center;
@@ -24,7 +24,7 @@ h1, h2, h3 {
 }
 
 h2 {
-    color: cadetblue;
+    color: rgb(6, 82, 56);
     margin-top: 0;
 }
 
@@ -35,7 +35,7 @@ main {
 
 /* Navegación */
 .navbar {
-    background-color: cadetblue;
+    background-color: rgb(88, 196, 16);
     padding: 10px 0;
 }
 
@@ -60,7 +60,7 @@ main {
 }
 
 .navbar ul li a:hover {
-    color: #e0ffff;
+    color: #20b1b1;
 }
 
 
@@ -74,7 +74,9 @@ main {
     grid-template-areas:
         "item1 item1 item1"
         "item2 item3 item4"
-        "item5 item5 item5";
+        "item5 item5 item5"
+        "item6 item6 item6"
+        "item7 item7 item7";
 
     grid-auto-rows: auto;
 }
@@ -86,10 +88,27 @@ main {
 .item:nth-child(5) { 
     grid-area: item5;
     margin-bottom: 60px;
+    
+    
+}
+.item:nth-child(6){
+    grid-area: item6;
+    margin-bottom: 60px;
+
+    
+
+}
+.item:nth-child(7){
+    grid-area: item7;
+    margin-bottom: 60pxpx;
+    
+    
+
 }
 
+
 .item {
-    background-color: #fff;
+    background-color: #9ed30c;
     border-radius: 8px;
     padding: 14px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -98,7 +117,7 @@ main {
 
 p, li {
     font-size: 1.2em;
-    color: #333;
+    color: white;
 }
 
 ol {
@@ -110,8 +129,8 @@ ol {
 
 
 footer {
-    background-color: cadetblue;
-    color: #fff;
+    background-color: rgb(15, 133, 50);
+    color: white;
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -154,7 +173,9 @@ footer {
             "item2"
             "item3"
             "item4"
-            "item5";
+            "item5"
+            "item6"
+            "item7";
         padding-bottom: 90px;
         margin-left: 10px;
         margin-right: 10px;
