@@ -1,0 +1,286 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f5faff;
+  color: #333;
+}
+
+h1, h2, h3 {
+  margin: 0 0 15px 0;
+  color: cadetblue;
+}
+
+h1 {
+  font-size: 24px;
+}
+.header h3 {
+  color: white !important;
+}
+
+
+button,
+.boton-principal {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+}
+
+button:hover,
+.boton-principal:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.formulario {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: 30px auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  padding: 8px;
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.resultado {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 0.4s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: cadetblue;
+  padding: 20px;
+  text-align: center;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.header-title h3 {
+  color: white;
+  font-size: 24px;
+  margin: 0;
+}
+
+.header-title .emoji {
+  font-size: 28px;
+}
+
+
+.footer {
+  background-color: cadetblue;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  z-index: 5;
+}
+
+.navbar {
+  background-color: cadetblue;
+  padding: 10px 0;
+}
+
+.navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.navbar ul li {
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #e0ffff;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 20px;
+  margin-bottom: 80px;
+  grid-template-areas:
+    "item1 item1 item1"
+    "item2 item3 item4"
+    "item5 item5 item5";
+  grid-auto-rows: auto;
+}
+
+.item:nth-child(1) { grid-area: item1; }
+.item:nth-child(2) { grid-area: item2; }
+.item:nth-child(3) { grid-area: item3; }
+.item:nth-child(4) { grid-area: item4; }
+.item:nth-child(5) {
+  grid-area: item5;
+  margin-bottom: 60px;
+}
+
+.item {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.item:nth-child(2) { border-left: 5px solid #1abc9c; }
+.item:nth-child(3) { border-left: 5px solid #3498db; }
+.item:nth-child(4) { border-left: 5px solid #f39c12; }
+
+
+p, li {
+  font-size: 1.2em;
+  color: #333;
+}
+
+ol {
+  padding-left: 20px;
+  text-align: left;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.flex-item {
+  flex: 1;
+  min-width: 250px;
+  background-color: rgba(217, 243, 241, 0.1);
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin: 5px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "item1"
+      "item2"
+      "item3"
+      "item4"
+      "item5";
+    padding-bottom: 90px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+}
+
+/* === GRÁFICAS DE BARRAS POR TABLAS === */
+
+.bar-table {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bar-table thead th {
+  background-color: cadetblue;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+}
+
+.bar-table tbody td,
+.bar-table tbody th {
+  padding: 12px;
+  font-size: 15px;
+  border-bottom: 1px solid #ddd;
+}
+
+.bar-cell {
+  position: relative;
+}
+
+.bar {
+  background-color: #28a745;
+  height: 20px;
+  border-radius: 5px;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 8px;
+  color: white;
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: bold;
+}

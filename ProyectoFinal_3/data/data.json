@@ -1,0 +1,43 @@
+{
+  "departamentos": [
+    { "nombre": "Antioquia", "porcentaje": 12.1 },
+    { "nombre": "Bogotá D.C.", "porcentaje": 11.2 },
+    { "nombre": "Valle del Cauca", "porcentaje": 8.5 },
+    { "nombre": "Nariño", "porcentaje": 7.7 },
+    { "nombre": "Atlántico", "porcentaje": 6.3 },
+    { "nombre": "Bolívar", "porcentaje": 6.1 },
+    { "nombre": "Córdoba", "porcentaje": 5.8 },
+    { "nombre": "Santander", "porcentaje": 5.5 },
+    { "nombre": "Cauca", "porcentaje": 4.7 },
+    { "nombre": "Cundinamarca", "porcentaje": 4.4 },
+    { "nombre": "Magdalena", "porcentaje": 4.0 },
+    { "nombre": "Sucre", "porcentaje": 3.1 },
+    { "nombre": "Cesar", "porcentaje": 3.0 },
+    { "nombre": "La Guajira", "porcentaje": 2.3 },
+    { "nombre": "Tolima", "porcentaje": 2.3 },
+    { "nombre": "Norte de Santander", "porcentaje": 2.2 },
+    { "nombre": "Meta", "porcentaje": 1.9 },
+    { "nombre": "Boyacá", "porcentaje": 1.9 },
+    { "nombre": "Caldas", "porcentaje": 1.6 },
+    { "nombre": "Huila", "porcentaje": 1.6 },
+    { "nombre": "Risaralda", "porcentaje": 1.4 },
+    { "nombre": "Caquetá", "porcentaje": 0.9 },
+    { "nombre": "Quindío", "porcentaje": 0.7 },
+    { "nombre": "Chocó", "porcentaje": 0.6 },
+    { "nombre": "San Andrés", "porcentaje": 0.1 }
+  ],
+  "sectores": [
+    { "nombre": "Comercio y reparación de vehículos automotores y motocicletas", "porcentaje": 36.5 },
+    { "nombre": "Agricultura, ganadería, caza, silvicultura y pesca", "porcentaje": 14.2 },
+    { "nombre": "Transporte y almacenamiento", "porcentaje": 10.7 },
+    { "nombre": "Alojamiento y servicios de comida", "porcentaje": 9.4 },
+    { "nombre": "Industria manufacturera", "porcentaje": 9.0 },
+    { "nombre": "Actividades financieras y de seguros, inmobiliarias, profesionales y servicios administrativos", "porcentaje": 7.2 },
+    { "nombre": "Actividades artísticas, de entretenimiento, de recreación y otras actividades de servicios", "porcentaje": 4.8 },
+    { "nombre": "Construcción", "porcentaje": 4.3 },
+    { "nombre": "Actividades de atención a la salud humana y de asistencia social", "porcentaje": 1.9 },
+    { "nombre": "Información y comunicaciones", "porcentaje": 0.8 },
+    { "nombre": "Educación", "porcentaje": 0.5 },
+    { "nombre": "Minería", "porcentaje": 0.5 }
+  ]  
+}

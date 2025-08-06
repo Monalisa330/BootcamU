@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulador de Rentabilidad</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <h3>Simulador de Rentabilidad</h3>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#que-es">¿Qué es?</a></li>
+      <li><a href="index.html#objetivo">Objetivo</a></li>
+      <li><a href="index.html#funciona">¿Cómo funciona?</a></li>
+      <li><a href="graficos.html">Gráficos</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="formulario">
+      <h2>🧮 Calcula la rentabilidad de tu negocio</h2>
+      <p>Completa los siguientes campos con la información de tu idea de negocio:</p>
+
+      <div class="form-group">
+        <label for="departamento">Departamento</label>
+        <select id="departamento" required></select>
+      </div>
+
+      <div class="form-group">
+        <label for="sector">Sector del negocio</label>
+        <select id="sector" required></select>
+      </div>
+
+      <div class="form-group">
+        <label for="tipo">Tipo de negocio</label>
+        <input type="text" id="tipo" placeholder="Ej: Tienda de ropa" required />
+      </div>
+
+      <div class="form-group">
+        <label for="ingresos">Ingresos mensuales estimados (COP)</label>
+        <input type="number" id="ingresos" min="0" required />
+      </div>
+
+      <div class="form-group">
+        <label for="gastos">Gastos mensuales estimados (COP)</label>
+        <input type="number" id="gastos" min="0" required />
+      </div>
+
+      <button onclick="evaluar()" class="boton-principal">🔢 Evaluar Negocio</button>
+    </section>
+
+    <section class="resultado" id="resultado"></section>
+  </main>
+
+  <footer class="footer">
+    <p>👨‍💻 Creado por Sebastián Muñoz, Laura Álvarez y Daniel Hoyos</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

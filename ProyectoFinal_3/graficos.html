@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Distribución de Emprendimientos</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2"></script>
+</head>
+
+<body>
+  <header class="header">
+    <h3>📊 Distribución de Emprendimientos</h3>
+  </header>
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="index.html#que-es">¿Qué es?</a></li>
+      <li><a href="index.html#objetivo">Objetivo</a></li>
+      <li><a href="index.html#funciona">¿Cómo funciona?</a></li>
+      <li><a href="graficos.html">Gráficos</a></li>
+    </ul>
+  </nav>
+
+  <main class="portfolio">
+    <section class="item" id="graficas">
+      <h2>Departamentos</h2>
+      <canvas id="graficoDepartamentos"></canvas>
+
+      <h2 style="margin-top: 40px;">Sectores Económicos</h2>
+      <canvas id="graficoSectores"></canvas>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>👨‍💻 Creado por Sebastián Muñoz, Laura Álvarez y Daniel Hoyos</p>
+  </footer>
+
+  <script>
+    fetch('data/data.json')
+      .then(res => res.json())
+      .then(data => {
+        const departamentos = data.departamentos;
+        const sectores = data.sectores;
+
+        crearGrafico('graficoDepartamentos',
+          departamentos.map(d => d.nombre),
+          departamentos.map(d => d.porcentaje),
+          'Participación por Departamento');
+
+        crearGrafico('graficoSectores',
+          sectores.map(s => s.nombre),
+          sectores.map(s => s.porcentaje),
+          'Participación por Sector Económico');
+      });
+
+    function generarColores(n) {
+      const colores = [];
+      for (let i = 0; i < n; i++) {
+        colores.push(`hsl(190, 30%, ${85 - i * 1.5}%)`);
+      }
+      return colores;
+    }
+
+    function crearGrafico(idCanvas, etiquetas, datos, titulo) {
+      const ctx = document.getElementById(idCanvas).getContext('2d');
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: etiquetas,
+          datasets: [{
+            label: '% de emprendimientos',
+            data: datos,
+            backgroundColor: generarColores(datos.length),
+          }]
+        },
+        options: {
+          indexAxis: 'y',
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            title: {
+              display: true,
+              text: titulo,
+              font: { size: 18 }
+            },
+            datalabels: {
+              anchor: 'end',
+              align: 'right',
+              formatter: val => val.toFixed(1) + '%',
+              color: '#333',
+              font: { weight: 'bold' }
+            }
+          },
+          scales: {
+            x: {
+              ticks: {
+                callback: val => val + '%'
+              }
+            }
+          }
+        },
+        plugins: [ChartDataLabels]
+      });
+    }
+  </script>
+</body>
+
+</html>
