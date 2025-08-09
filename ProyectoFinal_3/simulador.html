@@ -7,6 +7,11 @@
   <title>Simulador de Rentabilidad</title>
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>
@@ -40,10 +45,36 @@
       </div>
 
       <div class="form-group">
+        <label for="tipo-renta">Tipo de rentabilidad</label>
+        <select id="tipo-renta" required>
+          <option value="">-- Selecciona --</option>
+          <option value="fija">Rentabilidad de ganancia</option>
+          <option value="variable">Rentabilidad de inversión</option>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="tipo">Tipo de negocio</label>
         <input type="text" id="tipo" placeholder="Ej: Tienda de ropa" required />
       </div>
 
+      <!-- Campos visibles solo para rentabilidad fija -->
+      <div id="campos-fija" class="hidden">
+        <div class="form-group">
+          <label for="ganancia-deseada">Ganancias Deseadas</label>
+          <input type="number" id="ganancia-deseada" min="0" />
+        </div>
+      </div>
+
+      <!-- Campos visibles solo para rentabilidad variable -->
+      <div id="campos-variable" class="hidden">
+        <div class="form-group">
+          <label for="inversion">Inversión</label>
+          <input type="number" id="inversion" min="0" />
+        </div>
+      </div>
+
+      <!-- Campos comunes -->
       <div class="form-group">
         <label for="ingresos">Ingresos mensuales estimados (COP)</label>
         <input type="number" id="ingresos" min="0" required />

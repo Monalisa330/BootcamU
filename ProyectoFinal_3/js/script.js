@@ -1,4 +1,3 @@
-// script.js
 let sectores = [];
 let departamentos = [];
 
@@ -9,8 +8,10 @@ fetch('data/data.json')
     sectores = data.sectores;
     departamentos = data.departamentos;
 
-    // Llenar el selector de sectores
     const selectorSector = document.getElementById('sector');
+    const selectorDepto = document.getElementById('departamento');
+
+    // Llenar sectores
     if (selectorSector) {
       sectores.forEach(sector => {
         const option = document.createElement('option');
@@ -20,8 +21,7 @@ fetch('data/data.json')
       });
     }
 
-    // Llenar el selector de departamentos
-    const selectorDepto = document.getElementById('departamento');
+    // Llenar departamentos
     if (selectorDepto) {
       departamentos.forEach(depto => {
         const option = document.createElement('option');
@@ -29,27 +29,6 @@ fetch('data/data.json')
         option.textContent = `${depto.nombre} (${depto.porcentaje}%)`;
         selectorDepto.appendChild(option);
       });
-    }
-
-    // Dibujar gráficos si existen los canvas
-    if (document.getElementById("graficoDepartamentos")) {
-      crearGraficoBarras(
-        "graficoDepartamentos",
-        departamentos.map(d => d.nombre),
-        departamentos.map(d => d.porcentaje),
-        generarColores(departamentos.length),
-        "Participación por Departamento"
-      );
-    }
-
-    if (document.getElementById("graficoSectores")) {
-      crearGraficoBarras(
-        "graficoSectores",
-        sectores.map(s => s.nombre),
-        sectores.map(s => s.porcentaje),
-        generarColores(sectores.length),
-        "Participación por Sector Económico"
-      );
     }
   })
   .catch(error => {
@@ -61,49 +40,79 @@ function evaluar() {
   const ingresos = parseFloat(document.getElementById("ingresos").value);
   const gastos = parseFloat(document.getElementById("gastos").value);
   const tipo = document.getElementById("tipo").value.trim();
+  const tiporenta = document.getElementById("tipo-renta").value;
   const sector = document.getElementById("sector").value;
   const departamento = document.getElementById("departamento").value;
 
-  if (isNaN(ingresos) || isNaN(gastos) || !sector || !departamento) {
-    alert("Por favor, completa todos los campos.");
+  const ganancia = ingresos - gastos;
+  let resultado = "";
+  let color = "";
+
+  if (!tiporenta || isNaN(ingresos) || isNaN(gastos) || !tipo || !sector || !departamento) {
+    alert("Por favor, completa todos los campos requeridos.");
     return;
   }
 
-  const ganancia = ingresos - gastos;
-  let mensaje = "";
-  let color = "";
+  if (tiporenta === "fija") {
+    const deseado = parseFloat(document.getElementById("ganancia-deseada").value);
+    if (isNaN(deseado)) {
+      alert("Por favor, ingresa la ganancia deseada.");
+      return;
+    }
 
-  if (ganancia > 1000000) {
-    mensaje = "✅ Excelente rentabilidad.";
-    color = "#d4edda";
-  } else if (ganancia > 0) {
-    mensaje = "⚠️ Rentabilidad aceptable. Puedes mejorar.";
-    color = "#fff3cd";
-  } else {
-    mensaje = "❌ Tu negocio tiene pérdidas. Revisa tus gastos.";
-    color = "#f8d7da";
+    if (ganancia >= deseado) {
+      resultado = "✅ Excelente rentabilidad. Supera tus expectativas.";
+      color = "#d4edda";
+    } else if (ganancia > 0) {
+      resultado = "⚠️ Rentabilidad aceptable. Aunque no cumple con la ganancia deseada, sigue siendo positiva.";
+      color = "#fff3cd";
+    } else {
+      resultado = "❌ Tu negocio tiene pérdidas. Revisa tus gastos o ingresos.";
+      color = "#f8d7da";
+    }
+
+  } else if (tiporenta === "variable") {
+    const inversion = parseFloat(document.getElementById("inversion").value);
+    if (isNaN(inversion) || inversion <= 0) {
+      alert("Por favor, ingresa una inversión válida.");
+      return;
+    }
+
+    const porcentaje = (ganancia / inversion) * 100;
+
+    if (porcentaje > 20) {
+      resultado = `✅ Rentabilidad alta: ${porcentaje.toFixed(2)}%. Excelente inversión.`;
+      color = "#d4edda";
+    } else if (porcentaje > 0) {
+      resultado = `⚠️ Rentabilidad moderada: ${porcentaje.toFixed(2)}%. Puede mejorar.`;
+      color = "#fff3cd";
+    } else {
+      resultado = `❌ Rentabilidad negativa: ${porcentaje.toFixed(2)}%. Hay pérdidas.`;
+      color = "#f8d7da";
+    }
   }
 
+  // Obtener info del JSON
   const sectorInfo = sectores.find(s => s.nombre === sector);
   const deptoInfo = departamentos.find(d => d.nombre === departamento);
 
   const resultadoHTML = `
-    <div style="background-color: ${color}; padding: 20px; border-radius: 8px; text-align: center; max-width: 500px; margin: 20px auto; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-      <strong>${tipo || "Tu negocio"} (${sector})</strong><br>
+    <div style="background-color: ${color}; padding: 20px; border-radius: 8px; text-align: center; max-width: 500px; margin: 20px auto;">
+      <strong>${tipo} (${sector})</strong><br>
       Departamento: <strong>${departamento}</strong><br>
       Ingresos: <strong>$${ingresos.toLocaleString("es-CO")}</strong><br>
       Gastos: <strong>$${gastos.toLocaleString("es-CO")}</strong><br>
       Ganancia mensual estimada: <strong>$${ganancia.toLocaleString("es-CO")}</strong><br>
-      Resultado: <strong>${mensaje}</strong><br><br>
+      Resultado: <strong>${resultado}</strong><br><br>
       En Colombia, el sector <strong>${sector}</strong> representa el <strong>${sectorInfo?.porcentaje ?? "?"}%</strong> de los emprendimientos.<br>
-      En el departamento <strong>${departamento}</strong> hay un <strong>${deptoInfo?.porcentaje ?? "?"}%</strong> del total de emprendimientos nacionales.
+      En el departamento <strong>${departamento}</strong>, hay un <strong>${deptoInfo?.porcentaje ?? "?"}%</strong> del total de emprendimientos nacionales.
     </div>
   `;
 
   document.getElementById("resultado").innerHTML = resultadoHTML;
 }
 
-// Centrar visualmente el formulario al cargar la página
+// Estilos al cargar
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".formulario");
   if (form) {
@@ -115,47 +124,22 @@ document.addEventListener("DOMContentLoaded", () => {
     form.style.borderRadius = "10px";
     form.style.marginTop = "30px";
   }
-});
 
-// Función para crear gráficos tipo barras horizontales
-function crearGraficoBarras(idCanvas, etiquetas, datos, colores, titulo) {
-  const ctx = document.getElementById(idCanvas).getContext("2d");
-  new Chart(ctx, {
-    type: "bar",
-    data: {
-      labels: etiquetas,
-      datasets: [{
-        label: "Participación (%)",
-        data: datos,
-        backgroundColor: colores,
-        borderWidth: 1
-      }]
-    },
-    options: {
-      indexAxis: 'y',
-      responsive: true,
-      plugins: {
-        legend: { display: false },
-        title: {
-          display: true,
-          text: titulo
-        },
-        datalabels: {
-          anchor: 'end',
-          align: 'right',
-          formatter: value => value.toFixed(1) + '%',
-          color: '#000',
-          font: { weight: 'bold', size: 12 }
-        }
-      },
-      scales: {
-        x: {
-          ticks: {
-            callback: value => value + "%"
-          }
-        }
+  // Campos dinámicos por tipo de renta
+  const tipoRenta = document.getElementById("tipo-renta");
+  const camposFija = document.getElementById("campos-fija");
+  const camposVariable = document.getElementById("campos-variable");
+
+  if (tipoRenta) {
+    tipoRenta.addEventListener("change", () => {
+      camposFija.classList.add("hidden");
+      camposVariable.classList.add("hidden");
+
+      if (tipoRenta.value === "fija") {
+        camposFija.classList.remove("hidden");
+      } else if (tipoRenta.value === "variable") {
+        camposVariable.classList.remove("hidden");
       }
-    },
-    plugins: [ChartDataLabels]
-  });
-}
+    });
+  }
+});
