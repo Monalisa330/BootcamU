@@ -80,7 +80,7 @@ function evaluar() {
 
     const porcentaje = (ganancia / inversion) * 100;
 
-    if (porcentaje > 20) {
+    if (porcentaje >= 20) {
       resultado = `✅ Rentabilidad alta: ${porcentaje.toFixed(2)}%. Excelente inversión.`;
       color = "#d4edda";
     } else if (porcentaje > 0) {
