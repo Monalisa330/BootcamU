@@ -316,11 +316,19 @@ ol {
 .item ol li {
   margin-bottom: 8px;
 }
+.section2-img {
+  display: block;
+  max-width: 20%;
+  height: auto;
+  border-radius: 10px;
+  margin-right: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 .section-img {
   display: block;
   max-width: 20%;
   height: auto;
   border-radius: 10px;
-  margin-left: 50px;
+  margin-right: 50px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
