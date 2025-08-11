@@ -332,3 +332,46 @@ ol {
   margin-right: 50px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
+
+
+.inconvenientes-content {
+  display: flex;
+  align-items: flex-start; 
+  gap: 20px;               
+}
+
+.inconvenientes-content ol {
+  flex: 1;
+  margin: 0;
+  padding-right: 30px;     
+  font-size: 1.15em;       
+  line-height: 1.6;        
+}
+
+.inconvenientes-content .section-img {
+  flex: 0 0 auto;
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin-left: -60px; 
+}
+
+/* Móvil: imagen debajo y centrada, texto normal */
+@media (max-width: 768px) {
+  .inconvenientes-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inconvenientes-content ol {
+    padding-right: 0;
+    text-align: left;
+  }
+
+  .inconvenientes-content .section-img {
+    margin-left: 0;
+    max-width: 100%;
+  }
+}
