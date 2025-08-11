@@ -1,19 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simulador de Rentabilidad</title>
   <link rel="stylesheet" href="css/style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Librería SweetAlert2 antes del JS principal -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   <style>
-    .hidden {
-      display: none;
-    }
+    .hidden { display: none; }
   </style>
 </head>
-
 <body>
   <header class="header">
     <h3>Simulador de Rentabilidad</h3>
@@ -58,7 +56,7 @@
         <input type="text" id="tipo" placeholder="Ej: Tienda de ropa" required />
       </div>
 
-      <!-- Campos visibles solo para rentabilidad fija -->
+      <!-- Campos para rentabilidad fija -->
       <div id="campos-fija" class="hidden">
         <div class="form-group">
           <label for="ganancia-deseada">Ganancias Deseadas</label>
@@ -66,7 +64,7 @@
         </div>
       </div>
 
-      <!-- Campos visibles solo para rentabilidad variable -->
+      <!-- Campos para rentabilidad variable -->
       <div id="campos-variable" class="hidden">
         <div class="form-group">
           <label for="inversion">Inversión</label>
@@ -76,26 +74,20 @@
 
       <!-- Campos comunes -->
       <div class="form-group">
-        <label for="ingresos">Ingresos mensuales estimados (COP)</label>
+        <label for="ingresos">Ingresos mensuales (COP)</label>
         <input type="number" id="ingresos" min="0" required />
       </div>
 
       <div class="form-group">
-        <label for="gastos">Gastos mensuales estimados (COP)</label>
+        <label for="gastos">Gastos mensuales (COP)</label>
         <input type="number" id="gastos" min="0" required />
       </div>
 
       <button onclick="evaluar()" class="boton-principal">🔢 Evaluar Negocio</button>
     </section>
-
-    <section class="resultado" id="resultado"></section>
   </main>
 
-  <footer class="footer">
-    <p>👨‍💻 Creado por Sebastián Muñoz, Laura Álvarez y Daniel Hoyos</p>
-  </footer>
 
   <script src="js/script.js"></script>
 </body>
-
 </html>
