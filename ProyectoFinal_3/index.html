@@ -1,124 +1,133 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mi Primer Negocio</title>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- Estilos -->
   <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Librería de alertas (si la usas en otras páginas) -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body>
   <header class="header">
-    <h3>Mi Primer Negocio</h3>
+    <h1>Mi Primer Negocio</h1>
   </header>
 
   <nav class="navbar">
     <ul>
       <li><a href="#">Inicio</a></li>
-      <li><a href="#que-es">Propósito</a></li>
+      <li><a href="#proposito">Propósito</a></li>
       <li><a href="#objetivo">Objetivo</a></li>
       <li><a href="#funciona">¿Cómo funciona?</a></li>
       <li><a href="#renta">Rentabilidad</a></li>
-      <li><a href="#inconvenientes">Incovenientes</a></li>
-      <li><a href="#Actividades">Actividades</a></li>
+      <li><a href="#inconvenientes">Inconvenientes</a></li>
+      <li><a href="#actividades">Actividades</a></li>
       <li><a href="graficos.html">Gráficos</a></li>
-
     </ul>
   </nav>
 
   <main class="portfolio">
-
-
-    <section class="item" id="que-es">
-      <h2>Propósito</h2>
-      <p>
-        Esta página ha nacido con el propósito de ayudar a los emprendedores en Colombia, tanto a los que están
-        comenzando como a aquellos que ya tienen sus propios negocios establecidos. La idea es que, al ingresar al mundo
-        empresarial, no tengan miedo de perder su capital o de invertir dinero en un negocio no rentable en el país.
-        Un ejemplo para ilustrar el propósito de esta página es el siguiente: cuando muchos de nosotros éramos pequeños
-        y queríamos aprender a montar bicicleta, sentíamos miedo de caernos y lastimarnos. Una solución para superar ese
-        miedo y evitar posibles daños era usar protecciones como rodilleras, casco, entre otras. De la misma manera,
-        esta página actúa como una protección para los emprendedores que desean continuar con sus proyectos e invertir
-        en ellos sin el temor de fracasar o perder su inversión.
-
-      </p>
-    </section>
-
-    <section class="item" id="objetivo">
-      <h2>🎯 Objetivo</h2>
-      <ul>
-        <li> Brindar apoyo a nuevos emprendedores en Colombia, orientándolos en sus primeros pasos dentro del mundo
-          empresarial.</li>
-        <li>Ofrecer herramientas para calcular ganancias y evaluar la rentabilidad de diferentes tipos de negocios.</li>
-        <li>Proporcionar datos actualizados sobre el panorama del emprendimiento en Colombia, incluyendo estadísticas y
-          tendencias del mercado.</li>
-        <li>Enseñar a identificar cuándo un negocio es rentable o no según lo que la persona ingrese en el simulador.
-        </li>
-        <li>Reducir el riesgo de inversión mediante información clara y práctica que permita tomar decisiones
-          informadas.</li>
-      </ul>
-    </section>
-
-    <section class="item" id="funciona">
-      <h2>🛠️ ¿Cómo funciona?</h2>
-      <ol>
-        <li>Tu departamento (por ejemplo: Antioquia).</li>
-        <li>El sector económico (por ejemplo: Comercio).</li>
-        <li>Tipo de negocio (como panadería, tienda de ropa...)</li>
-        <li>Los ingresos y gastos mensuales estimados.</li>
-      </ol>
-      <p>
-        El simulador calculará tu rentabilidad y te dirá si es excelente, aceptable o negativa. También te mostrará cómo
-        se compara con el promedio del país.
-      </p>
-    </section>
-    <section class="item" id="renta">
-      <h2>¿Qué es rentabilidad y ganancia de un negocio? </h2>
-      <p>La ganancia es el beneficio económico que obtiene un negocio después de restar todos los costos y gastos a
-        sus ingresos. Es el resultado final de cuánto dinero se ganó realmente por cada venta o actividad comercial.
-        La rentabilidad indica qué tan eficiente es un negocio para generar ganancias en comparación con la inversión
-        realizada. Es un indicador clave para saber si un emprendimiento vale la pena o no.
-      </p>
-    </section>
-
-    <section class="item" id="Incovenientes">
-      <h2>Principales inconvenientes del emprendimiento en Colombia </h2>
-      <ol>
-        <li>Falta de preparación y conocimiento</li>
-        <li>Factores estructurales del entorno</li>
-        <li>Limitado acceso a financiación </li>
-        <li>Desigualdad de género</li>
-        <li>Dificultades en las fases iniciales</li>
-        <li>Obstáculos técnicos y administrativos</li>
-        <li>Débil acompañamiento institucional</li>
-      </ol>
-    </section>
-
-    <section class="item" id="Actividades">
-      <h2>Actividades Económicas con Mayor Generación de Ingresos en Colombia </h2>
-      <p>Las actividades económicas con la mayor participación en las ventas o ingresos nominales fueron: Comercio y
-        reparación de vehículos automotores y motocicletas (36,5%); Agricultura, ganadería, caza, silvicultura y pesca
-        (14,2%); Transporte y almacenamiento (10,7%); Alojamiento y servicios de comida (9,4%); Industria manufacturera
-        (9,0%); Actividades financieras y de seguros, inmobiliarias, profesionales y servicios administrativos (7,2%);
-        Actividades artísticas, de entretenimiento de recreación y otras actividades de los servicios (4,8%);
-        Construcción (4,3%). Por otro lado, atención de salud humana y de asistencia social (1,9%); Información y
-        comunicaciones (0,8%), Educación (0,5%) y Minería (0,5%); fueron las actividades económicas con la menor
-        participación en el ingreso o ventas nominales.
-      </p>
-    </section>
-
-
+    <!-- Hero / bienvenida -->
     <section class="item">
       <h1>👋 ¡Bienvenido a Mi Primer Negocio!</h1>
       <p>
-        Este proyecto fue creado por estudiantes del nivel explorador para ayudar a otras personas a evaluar si su idea
-        de negocio puede ser rentable. Usamos datos reales del DANE (EMICRON 2024) y herramientas básicas de
-        programación web.
+        Este proyecto fue creado por estudiantes del nivel explorador para ayudar a otras personas a evaluar
+        si su idea de negocio puede ser rentable. Usamos datos del DANE (EMICRON 2024) y herramientas
+        básicas de programación web.
       </p>
       <a href="simulador.html" class="boton-principal">🚀 Probar el Simulador</a>
+    </section>
+
+    <!-- Propósito -->
+    <section class="item" id="proposito">
+      <h2>🎯 Propósito</h2>
+      <p>
+        Esta página ha nacido con el propósito de ayudar a los emprendedores en Colombia, tanto a los que
+        están comenzando como a aquellos que ya tienen sus propios negocios establecidos. La idea es que, al
+        ingresar al mundo empresarial, no tengan miedo de perder su capital o de invertir dinero en un negocio
+        no rentable en el país.
+      </p>
+      <p>
+        Un ejemplo para ilustrarlo: cuando éramos pequeños y aprendíamos a montar bicicleta, sentíamos miedo
+        de caernos y lastimarnos. Para superar ese miedo usábamos protecciones como rodilleras y casco.
+        De la misma manera, esta página actúa como una “protección” para los emprendedores que desean
+        continuar con sus proyectos e invertir sin el temor de fracasar o perder su inversión.
+      </p>
+    </section>
+
+    <!-- Objetivo -->
+    <section class="item" id="objetivo">
+      <h2>🎯 Objetivo</h2>
+      <ul>
+        <li>Brindar apoyo a nuevos emprendedores en sus primeros pasos dentro del mundo empresarial.</li>
+        <li>Ofrecer herramientas para calcular ganancias y evaluar la rentabilidad de diferentes tipos de negocios.</li>
+        <li>Proporcionar datos y contexto del emprendimiento en Colombia.</li>
+        <li>Enseñar a identificar cuándo un negocio es rentable según lo que se ingrese en el simulador.</li>
+        <li>Reducir el riesgo de inversión con información clara y práctica para tomar decisiones informadas.</li>
+      </ul>
+    </section>
+
+    <!-- Cómo funciona -->
+    <section class="item" id="funciona">
+      <h2>🛠 ¿Cómo funciona?</h2>
+      <ol>
+        <li>Selecciona tu departamento (por ejemplo: Antioquia).</li>
+        <li>Elige el sector económico (por ejemplo: Comercio).</li>
+        <li>Indica el tipo de negocio (panadería, tienda de ropa, etc.).</li>
+        <li>Ingresa tus ingresos y gastos mensuales estimados.</li>
+      </ol>
+      <p>
+        El simulador calculará tu rentabilidad y te dirá si es excelente, aceptable o negativa.
+        También te mostrará cómo se compara con referencias del sector.
+      </p>
+    </section>
+
+    <!-- Rentabilidad -->
+    <section class="item" id="renta">
+      <h2>💡 ¿Qué es rentabilidad y ganancia de un negocio?</h2>
+      <p>
+        <b>Ganancia</b>: es el beneficio económico que obtiene un negocio después de restar todos los costos y
+        gastos a sus ingresos. Es el resultado final de cuánto dinero se gana por cada venta o actividad comercial.
+      </p>
+      <p>
+        <b>Rentabilidad</b>: indica qué tan eficiente es un negocio para generar ganancias en comparación con la
+        inversión realizada. Es un indicador clave para saber si un emprendimiento vale la pena o no.
+      </p>
+    </section>
+
+    <!-- Inconvenientes -->
+    <section class="item" id="inconvenientes">
+      <h2>⚠ Principales inconvenientes del emprendimiento en Colombia</h2>
+      <ol>
+        <li>Falta de preparación y conocimiento.</li>
+        <li>Factores estructurales del entorno (competencia, economía, políticas, corrupción).</li>
+        <li>Limitado acceso a financiación (tasas altas, poco capital semilla).</li>
+        <li>Desigualdad de género.</li>
+        <li>Dificultades en las fases iniciales (propuesta de valor, métricas, redes).</li>
+        <li>Obstáculos técnicos y administrativos (trámites, legalidad, estandarización, contabilidad).</li>
+        <li>Débil acompañamiento institucional.</li>
+      </ol>
+      <img src="img/stonk.jpg" class="section-img">
+    </section>
+
+    <!-- Actividades económicas -->
+    <section class="item" id="actividades">
+      <h2>🏆 Actividades económicas con mayor generación de ingresos en Colombia</h2>
+        <li>Comercio y reparación de vehículos 36,5%.</li>
+        <li>Agricultura, ganadería, caza, silvicultura y pesca 14,2%.</li>
+        <li>Transporte y almacenamiento 10,7%</li>
+        <li>Alojamiento y servicios de comida 9,4%</li>
+        <li>Industria manufacturera 9,0%</li>
+        <li>Actividades financieras, de seguros, inmobiliarias, profesionales y servicios administrativos 7,2%</li>
+        <li>Actividades artísticas, de entretenimiento, recreación y otros servicios 4,8%</li>
+        <li>Construcción 4,3%</li>
     </section>
   </main>
 
@@ -126,8 +135,6 @@
     <p>👨‍💻 Creado por Sebastián Muñoz, Laura Álvarez y Daniel Hoyos</p>
   </footer>
 
-  <!-- Tu script principal -->
   <script src="js/script.js"></script>
 </body>
-
 </html>

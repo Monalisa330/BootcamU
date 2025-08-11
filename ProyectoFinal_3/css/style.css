@@ -21,7 +21,7 @@ h1 {
 
 button,
 .boton-principal {
-  padding: 10px 20px;
+  padding: 20px 25px;
   background-color: #28a745;
   border: none;
   color: white;
@@ -179,9 +179,15 @@ select {
   text-align: center;
 }
 
-.item:nth-child(2) { border-left: 5px solid #1abc9c; }
-.item:nth-child(3) { border-left: 5px solid #3498db; }
-.item:nth-child(4) { border-left: 5px solid #f39c12; }
+
+/* Bordes cálidos y agradables para 7 tarjetas */
+.item:nth-child(1) { border-left: 6px solid #F4A261; } /* Bienvenida */
+.item:nth-child(2) { border-left: 6px solid #E76F51; } /* Propósito */
+.item:nth-child(3) { border-left: 6px solid #F6BD60; } /* Objetivo */
+.item:nth-child(4) { border-left: 6px solid #90BE6D; } /* Cómo funciona */
+.item:nth-child(5) { border-left: 6px solid #FFD166; } /* Rentabilidad */
+.item:nth-child(6) { border-left: 6px solid #F8961E; } /* Inconvenientes */
+.item:nth-child(7) { border-left: 6px solid #F3722C; } /* Actividades */
 
 
 p, li {
@@ -284,5 +290,11 @@ ol {
   line-height: 20px;
   font-weight: bold;
 }
-
-
+.section-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px; /* separa la imagen del texto */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
